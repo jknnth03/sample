@@ -6,12 +6,14 @@ const Login = () => {
   };
   return (
     <div className="container">
-      <div className="formwrapper">
-        <h2 className="login_title">Login</h2>
-        <div className="formbox">
-          <input type="text" placeholder="username" />
-          <input type="password" placeholder="password" />
-          <button onClick={handlelogin}>Log in</button>
+      <div className="formwrappermain">
+        <div className="formwrapper">
+          <h2 className="login_title">Login</h2>
+          <div className="formbox">
+            <input type="text" placeholder="username" />
+            <input type="password" placeholder="password" />
+            <button onClick={handlelogin}>Log in</button>
+          </div>
         </div>
       </div>
     </div>
