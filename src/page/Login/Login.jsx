@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import "./styles/Login.css";
+import "../Login/login.scss"
 import { useNavigate } from "react-router-dom";
+import logo from "../../assets/crystales.png";
+
 const Login = () => {
   const navigate = useNavigate();
 
@@ -26,26 +28,24 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
-      <div className="formwrappermain">
-        <div className="formwrapper">
-          <h2 className="login_title">Login</h2>
-          <div className="formbox">
+    <div className="login">
+      <div className="login__form-wrapper">
+          <img src={logo} className="login__logo"/>
+          <h2 className="login__title" className="login__title">Login</h2>
+          <div className="login__formbox">
             <input
               type="text"
-              placeholder="username"
+              placeholder="username" className="login__textfield login__textfield--username"
               onChange={handleUsername}
             />
-            {!username && loggingIn && <p>username is required</p>}
-
+            {!username && loggingIn && <p className="login__helpertext--error">Username is required</p>}
             <input
               type="password"
-              placeholder="password"
+              placeholder="password" className="login__textfield login__textfield--password"
               onChange={handlePassword}
             />
-            {!password && loggingIn && <p>password is required</p>}
-            <button onClick={handlelogin}>Log in</button>
-          </div>
+            {!password && loggingIn && <p className="login__helpertext--error">Password is required</p>}
+            <button onClick={handlelogin} className="login__button">Log in</button>
         </div>
       </div>
     </div>
